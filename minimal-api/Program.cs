@@ -4,7 +4,7 @@ var app = builder.Build();
 app.MapGet("/", () => "Hello World!");
 
 // CORREÇÃO 1: A sintaxe do parâmetro foi corrigida para (Tipo nome).
-app.MapPost("/login", (LoginDTO loginDto) =>
+app.MapPost("/login", (AspNetMinimalsApi.DTOs.LoginDTO loginDto) =>
 {
     // ALERTA DE SEGURANÇA: Esta forma de verificar a senha é insegura e serve apenas para demonstração.
     // O correto seria usar um hash de senha armazenado em um banco de dados.
@@ -18,10 +18,6 @@ app.MapPost("/login", (LoginDTO loginDto) =>
     }
 });
 
-public class LoginDTO{
-    public string Email{ get; set; } = default!;
-    public string Senha{ get; set; } = default!;
-}
 
 app.Run();
 
