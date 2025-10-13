@@ -1,9 +1,9 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Migrations.Operations.Builders;
-using AspNetMinimalsApi.Infraestrutura.Db;
+
 
 var builder = WebApplication.CreateBuilder(args);
-
+var app = builder.Build();
 
 
 builder.Services.AddDbContext<DbContexto> (options =>
@@ -15,7 +15,7 @@ builder.Services.AddDbContext<DbContexto> (options =>
     );
 });
 
-var app = builder.Build();
+
 
 app.MapGet("/", () => "Hello World!");
 
